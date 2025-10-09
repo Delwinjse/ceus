@@ -121,22 +121,20 @@ body{
   .hero__art{ order: 2; }     /* image after text */
 }
 
-/* ===== Logos (solid banner image) ===== */
-.logos{ padding: 0; }
-.logos--banner{
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  background: #fffef2;
-}
-.logos-banner{
-  /* Set your exported composite image here */
-  /* Example: background-image: url('assets/clients-banner.jpg'); */
-  background-image: url('assets/img/logos2.png'); */
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;    /* keeps the whole image visible */
-  min-height: 110px;           /* tweak to suit your artwork’s aspect ratio */
+.logos {
+  display: block;
   width: 100%;
+  background: url('assets/img/logos2.png') no-repeat center center;
+  background-size: cover; /* fills full width & height */
+  height: 180px; /* increase for desktop */
+}
+
+@media (max-width: 768px) {
+  .logos {
+    background-size: contain;
+    background-position: center;
+    height: 60px;
+  }
 }
 
 /* ===== Feature ===== */
